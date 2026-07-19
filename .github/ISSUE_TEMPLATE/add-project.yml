@@ -1,0 +1,64 @@
+name: Suggest a project
+description: Propose an open-source or source-available project for the list.
+title: "Add: "
+labels:
+  - addition
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping curate the Automation 3.0 ecosystem. Please read the contribution guide before submitting.
+  - type: input
+    id: project
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Canonical GitHub repository
+      placeholder: https://github.com/owner/project
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: Include whether it is OSI-approved, fair-code, or source-available.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Suggested category
+      options:
+        - Agent runtimes and assistants
+        - Prompt-native platforms
+        - Agent frameworks and orchestration
+        - Schedules, triggers, and durable execution
+        - Workflow automation bridges
+        - Tools, MCP, and sandboxes
+        - Browser and computer use
+        - Memory and context
+        - Observability and evaluation
+        - Safety and human approval
+    validations:
+      required: true
+  - type: textarea
+    id: fit
+    attributes:
+      label: Why it belongs
+      description: Explain how it turns intent into action or makes agent automation more reliable.
+    validations:
+      required: true
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Are you affiliated with the project?
+      options:
+        - No
+        - Yes, I maintain or contribute to it
+        - Yes, I work for or advise the organization
+    validations:
+      required: true

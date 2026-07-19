@@ -1,0 +1,12 @@
+{
+  "name": "awesome-automation-3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A curated list of open-source tools for prompt-native Automation 3.0.",
+  "scripts": {
+    "test": "node scripts/validate-list.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
