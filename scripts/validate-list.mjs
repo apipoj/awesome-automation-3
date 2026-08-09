@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
+import { parseProjectEntries, projectSectionTitles } from "./project-list.mjs";
 
 const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
-const errors = [];
+const { entries, errors } = parseProjectEntries(readme);
 
 if (!readme.endsWith("\n")) {
   errors.push("README.md must end with a newline.");
@@ -10,13 +11,6 @@ if (!readme.endsWith("\n")) {
 if (/[ \t]+$/m.test(readme)) {
   errors.push("README.md contains trailing whitespace.");
 }
-
-const projectEntryPattern = /^- \[([^\]]+)\]\((https:\/\/github\.com\/[^)\s]+)\)(?: `†`)? - (.+)$/gm;
-const entries = [...readme.matchAll(projectEntryPattern)].map((match) => ({
-  name: match[1],
-  url: match[2].replace(/\/$/, ""),
-  description: match[3],
-}));
 
 if (entries.length < 40) {
   errors.push(`Expected at least 40 curated GitHub entries; found ${entries.length}.`);
@@ -35,12 +29,10 @@ for (const entry of entries) {
   }
 }
 
-const sections = readme.split(/^## /m).slice(1);
-for (const section of sections) {
-  const [title, ...bodyLines] = section.split("\n");
-  const names = [...bodyLines.join("\n").matchAll(projectEntryPattern)].map(
-    (match) => match[1],
-  );
+for (const section of projectSectionTitles) {
+  const names = entries
+    .filter((entry) => entry.section === section)
+    .map((entry) => entry.name);
   if (names.length < 2) continue;
 
   const sortedNames = [...names].sort((a, b) =>
@@ -48,7 +40,7 @@ for (const section of sections) {
   );
 
   if (names.some((name, index) => name !== sortedNames[index])) {
-    errors.push(`Entries in "${title}" must be alphabetized.`);
+    errors.push(`Entries in "${section}" must be alphabetized.`);
   }
 }
 

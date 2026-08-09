@@ -31,6 +31,8 @@ Commercial projects are eligible only when the linked repository contains a usef
 5. Run `npm test` or `node scripts/validate-list.mjs`.
 6. In the pull request, explain why the project belongs and disclose your relationship to it.
 
+Maintainers can also run `npm run audit` to confirm that every listed GitHub repository is public, reachable, available, and linked through its canonical URL. The command requires a GitHub token in `PROJECT_AUDIT_TOKEN`.
+
 ## Description style
 
 - Start with what the project enables.
