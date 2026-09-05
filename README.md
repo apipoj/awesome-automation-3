@@ -131,6 +131,7 @@ If you want to assemble a first Automation 3.0 stack:
 
 ## Observability and evaluation
 
+- [Agent QA](https://github.com/vostride/agent-qa) `†` - Runs natural-language web and mobile tests with persistent memory, self-healing selectors, and evidence-backed failure triage.
 - [AgentOps](https://github.com/AgentOps-AI/agentops) - Monitoring, tracing, cost tracking, and evaluation for agent runs.
 - [Langfuse](https://github.com/langfuse/langfuse) `†` - Open-source LLM engineering platform for traces, prompts, evaluations, and metrics.
 - [Opik](https://github.com/comet-ml/opik) - Evaluation and observability platform for LLM applications and agent workflows.
