@@ -67,6 +67,7 @@ If you want to assemble a first Automation 3.0 stack:
 - [OpenClaw](https://github.com/openclaw/openclaw) - Personal AI assistant that runs across operating systems, messaging channels, tools, and skills.
 - [OpenCode](https://github.com/anomalyco/opencode) - Open-source coding agent with terminal and desktop interfaces.
 - [OpenHands](https://github.com/OpenHands/OpenHands) - Platform for agents that perform software-development tasks through code, terminals, and browsers.
+- [YYLO](https://github.com/yylo-dev/yylo) - Command-line orchestrator for coding agents that runs each typed task in a dedicated branch/worktree with validation, risk-based merge review, and receipt-backed repository changes.
 
 ## Prompt-native platforms
 
