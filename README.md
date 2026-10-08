@@ -75,6 +75,7 @@ If you want to assemble a first Automation 3.0 stack:
 - [Flowise](https://github.com/FlowiseAI/Flowise) `†` - Visual platform for composing LLM and agent applications, useful as a bridge from node workflows to agent execution.
 - [Langflow](https://github.com/langflow-ai/langflow) - Low-code platform for building and serving agentic applications and tool-connected flows.
 - [Sim](https://github.com/simstudioai/sim) - Self-hostable workspace for building, deploying, and monitoring agent workflows through visual, conversational, and code interfaces.
+- [Tale](https://github.com/tale-project/tale) - Enables teams to delegate project tasks to configured agent harnesses and review reports and files in a self-hosted workspace.
 
 ## Agent frameworks and orchestration
 
